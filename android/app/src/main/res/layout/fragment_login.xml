@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/warren_color"
+    tools:context=".LoginFragment">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etMail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_editText"
+        android:layout_marginStart="@dimen/editText_margin"
+        android:layout_marginTop="@dimen/editTextMail_marginTop"
+        android:layout_marginEnd="@dimen/editText_margin"
+        android:background="@drawable/background_edittext"
+        android:hint="@string/e_mail"
+        android:inputType="textEmailAddress"
+        android:paddingStart="@dimen/editText_paddingStart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_editText"
+        android:layout_marginStart="@dimen/editText_margin"
+        android:layout_marginTop="@dimen/editTextPassword_marginTop"
+        android:layout_marginEnd="@dimen/editText_margin"
+        android:background="@drawable/background_edittext"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="@dimen/editText_paddingStart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMail" />
+
+    <Button
+        android:id="@+id/btSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_button_signin"
+        android:layout_marginTop="@dimen/margin_button_signin"
+        android:layout_marginRight="@dimen/margin_button_signin"
+        android:backgroundTint="@color/black"
+        android:text="@string/sign_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+    <Button
+        android:id="@+id/tvForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_button_forgotPassword"
+        android:layout_marginTop="@dimen/marginTop_button_forgotPassword"
+        android:backgroundTint="@android:color/transparent"
+        android:text="@string/forgot_password"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_button_forgotPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btSignIn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="button_margin">8dp</dimen>
+    <dimen name="margin_button">8dp</dimen>
     <dimen name="radius_carousel">5dp</dimen>
+    <dimen name="editText_margin">16dp</dimen>
+    <dimen name="textSize_editText">24sp</dimen>
+    <dimen name="editTextMail_marginTop">64dp</dimen>
+    <dimen name="height_editText">50dp</dimen>
+    <dimen name="editTextPassword_marginTop">8dp</dimen>
+    <dimen name="editText_paddingStart">8dp</dimen>
+    <dimen name="margin_button_signin">16dp</dimen>
+    <dimen name="margin_button_forgotPassword">16dp</dimen>
+    <dimen name="marginTop_button_forgotPassword">8dp</dimen>
+    <dimen name="textSize_button_forgotPassword">12sp</dimen>
 </resources>

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import br.com.warren.challange.databinding.FragmentHomeBinding
 
 
@@ -27,7 +28,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         binding.btnLogin.setOnClickListener {
-            Toast.makeText(context, R.string.function_unavailable, Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+            //Toast.makeText(context, R.string.function_unavailable, Toast.LENGTH_SHORT).show()
         }
     }
 }

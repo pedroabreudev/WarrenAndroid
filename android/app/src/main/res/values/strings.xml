@@ -5,4 +5,8 @@
     <string name="open_account">Abra sua conta</string>
     <string name="login">Login</string>
     <string name="function_unavailable">Função indisponível no momento!</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password">senha</string>
+    <string name="sign_in">Entrar</string>
+    <string name="forgot_password">Esqueci a senha</string>
 </resources>
