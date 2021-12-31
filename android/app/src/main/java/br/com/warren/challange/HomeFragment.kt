@@ -23,11 +23,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         binding.btnOpenAccount.setOnClickListener {
-            Toast.makeText(context, "Função indisponível no momento!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.function_unavailable, Toast.LENGTH_SHORT).show()
         }
 
         binding.btnLogin.setOnClickListener {
-            Toast.makeText(context, "Função indisponível no momento!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.function_unavailable, Toast.LENGTH_SHORT).show()
         }
     }
 }
