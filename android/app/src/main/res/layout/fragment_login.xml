@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
     <Button
-        android:id="@+id/tvForgotPassword"
+        android:id="@+id/btForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_button_forgotPassword"

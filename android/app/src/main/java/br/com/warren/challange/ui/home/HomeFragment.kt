@@ -1,36 +1,63 @@
 package br.com.warren.challange.ui.home
 
 import android.os.Bundle
-import android.view.View
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import br.com.warren.challange.MainViewModel
 import br.com.warren.challange.R
 import br.com.warren.challange.databinding.FragmentHomeBinding
+import br.com.warren.challange.network.ServiceApi
+import br.com.warren.challange.repository.WarrenRepository
+import br.com.warren.challange.ui.base.BaseFragment
 
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepository>() {
 
-    private lateinit var binding: FragmentHomeBinding
-    private val imagens =
+    private var messageToast = 0
+    private val images =
         intArrayOf(R.drawable.home, R.drawable.conta, R.drawable.carteiras, R.drawable.trade)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding = FragmentHomeBinding.bind(view)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
-        binding.carouselView.pageCount = imagens.size
-        binding.carouselView.setImageListener { position, imageView ->
-            imageView.setImageResource(imagens[position])
-        }
+        initCarouselView()
+        openAccount()
+        login()
+    }
 
-        binding.btnOpenAccount.setOnClickListener {
-            Toast.makeText(context, R.string.function_unavailable, Toast.LENGTH_SHORT).show()
-        }
-
+    private fun login() {
         binding.btnLogin.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
-            //Toast.makeText(context, R.string.function_unavailable, Toast.LENGTH_SHORT).show()
         }
     }
+
+    private fun openAccount() {
+        binding.btnOpenAccount.setOnClickListener {
+            messageToast = R.string.function_unavailable
+            toastMessage(messageToast)
+        }
+    }
+
+    private fun initCarouselView() {
+        binding.carouselView.pageCount = images.size
+        binding.carouselView.setImageListener { position, imageView ->
+            imageView.setImageResource(images[position])
+        }
+    }
+
+    private fun toastMessage(messageToast: Int) {
+        Toast.makeText(requireContext(), messageToast, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun getViewModel() = MainViewModel::class.java
+
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentHomeBinding.inflate(inflater, container, false)
+
+    override fun getFragmentRepository() = WarrenRepository(remote.buildApi(ServiceApi::class.java))
+
 }

@@ -8,11 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import br.com.warren.challange.repository.BaseRepository
 
-abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
+abstract class BaseFragment<VM : ViewModel, VB : ViewBinding, BR : BaseRepository> : Fragment() {
 
-    private lateinit var binding: VB
-    private lateinit var viewModel: VM
+    protected lateinit var binding: VB
+    protected lateinit var viewModel: VM
+    protected val remote = br.com.warren.challange.network.Remote()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,9 +27,9 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
         return binding.root
     }
 
-    abstract fun getFragmentRepository(): Any
-
     abstract fun getViewModel(): Class<VM>
 
     abstract fun getFragmentBinding(inflater: LayoutInflater, container: ViewGroup?): VB
+
+    abstract fun getFragmentRepository(): BR
 }

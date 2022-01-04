@@ -7,6 +7,10 @@
     <string name="function_unavailable">Função indisponível no momento!</string>
     <string name="e_mail">e-mail</string>
     <string name="password">senha</string>
+    <string name="empty_email">Informe um e-mail!</string>
+    <string name="empty_password">Informe uma senha!</string>
+    <string name="wrong_email_or_password">Email ou senha incorreto!</string>
+    <string name="empty_email_and_password">Por favor, informe um e-mail e senha!</string>
     <string name="sign_in">Entrar</string>
     <string name="forgot_password">Esqueci a senha</string>
 </resources>
