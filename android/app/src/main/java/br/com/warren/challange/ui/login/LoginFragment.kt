@@ -1,9 +1,10 @@
-package br.com.warren.challange
+package br.com.warren.challange.ui.login
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import br.com.warren.challange.R
 import br.com.warren.challange.databinding.FragmentLoginBinding
 
 

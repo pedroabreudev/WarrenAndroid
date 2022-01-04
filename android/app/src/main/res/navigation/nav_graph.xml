@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="br.com.warren.challange.HomeFragment"
+        android:name="br.com.warren.challange.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,7 +16,16 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="br.com.warren.challange.LoginFragment"
+        android:name="br.com.warren.challange.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_objectivesListFragment"
+            app:destination="@id/objectivesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/objectivesListFragment"
+        android:name="br.com.warren.challange.ui.objective.ObjectivesListFragment"
+        android:label="fragment_objectives_list"
+        tools:layout="@layout/fragment_objectives_list" />
 </navigation>

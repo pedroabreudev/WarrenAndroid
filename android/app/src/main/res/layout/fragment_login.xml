@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/warren_color"
-    tools:context=".LoginFragment">
+    tools:context=".ui.login.LoginFragment">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etMail"
