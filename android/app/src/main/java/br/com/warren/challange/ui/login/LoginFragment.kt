@@ -10,9 +10,9 @@ import br.com.warren.challange.MainViewModel
 import br.com.warren.challange.R
 import br.com.warren.challange.R.string
 import br.com.warren.challange.databinding.FragmentLoginBinding
-import br.com.warren.challange.network.ServiceApi
-import br.com.warren.challange.repository.WarrenRepository
-import br.com.warren.challange.response.LoginResponse
+import br.com.warren.challange.data.network.ServiceApi
+import br.com.warren.challange.data.repository.WarrenRepository
+import br.com.warren.challange.data.response.LoginResponse
 import br.com.warren.challange.ui.base.BaseFragment
 import retrofit2.Response
 

@@ -1,4 +1,4 @@
-package br.com.warren.challange.network
+package br.com.warren.challange.data.network
 
 import okhttp3.ResponseBody
 

@@ -3,8 +3,8 @@ package br.com.warren.challange.ui.base
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import br.com.warren.challange.MainViewModel
-import br.com.warren.challange.repository.BaseRepository
-import br.com.warren.challange.repository.WarrenRepository
+import br.com.warren.challange.data.repository.BaseRepository
+import br.com.warren.challange.data.repository.WarrenRepository
 import java.lang.IllegalArgumentException
 
 @Suppress("UNCHECKED_CAST")

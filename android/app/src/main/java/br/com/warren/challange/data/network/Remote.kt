@@ -1,4 +1,4 @@
-package br.com.warren.challange.network
+package br.com.warren.challange.data.network
 
 import br.com.warren.challange.BuildConfig
 import okhttp3.OkHttpClient

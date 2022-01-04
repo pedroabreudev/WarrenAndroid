@@ -1,7 +1,7 @@
-package br.com.warren.challange.repository
+package br.com.warren.challange.data.repository
 
-import br.com.warren.challange.network.ServiceApi
-import br.com.warren.challange.response.LoginBody
+import br.com.warren.challange.data.network.ServiceApi
+import br.com.warren.challange.data.response.LoginBody
 
 class WarrenRepository(private val api: ServiceApi) : BaseRepository() {
 

@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.warren.challange.repository.WarrenRepository
-import br.com.warren.challange.response.LoginResponse
+import br.com.warren.challange.data.repository.WarrenRepository
+import br.com.warren.challange.data.response.LoginResponse
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

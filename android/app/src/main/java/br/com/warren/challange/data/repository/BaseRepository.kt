@@ -1,6 +1,6 @@
-package br.com.warren.challange.repository
+package br.com.warren.challange.data.repository
 
-import br.com.warren.challange.network.Resource
+import br.com.warren.challange.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

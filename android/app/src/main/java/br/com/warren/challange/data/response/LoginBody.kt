@@ -1,4 +1,4 @@
-package br.com.warren.challange.response
+package br.com.warren.challange.data.response
 
 data class LoginBody(
     val email: String,
