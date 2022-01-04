@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -39,6 +40,7 @@ android {
 dependencies {
 
     def nav_version = "2.3.5"
+    def retrofit_gson_version = "2.9.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
@@ -46,6 +48,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
+    // CarouselView
     implementation 'com.synnapps:carouselview:0.1.5'
 
     // kotlin = Navigation Components
@@ -54,6 +57,12 @@ dependencies {
 
     // Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:2.4.0-rc01")
+
+    // Retrofit and Gson
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_gson_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_gson_version"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
 
     //test
     testImplementation 'junit:junit:4.13.2'
