@@ -2,6 +2,7 @@ package br.com.warren.challange.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
@@ -22,9 +23,8 @@ class LoginFragment : BaseFragment<MainViewModel, FragmentLoginBinding, WarrenRe
     private var password = ""
     private var messageToast = 0
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         forgotPassword()
         clickLogin()
         loginResponse()

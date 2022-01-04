@@ -2,6 +2,7 @@ package br.com.warren.challange.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
@@ -19,9 +20,8 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
     private val images =
         intArrayOf(R.drawable.home, R.drawable.conta, R.drawable.carteiras, R.drawable.trade)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initCarouselView()
         openAccount()
         login()
@@ -41,10 +41,10 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
     }
 
     private fun initCarouselView() {
-        binding.carouselView.pageCount = images.size
         binding.carouselView.setImageListener { position, imageView ->
             imageView.setImageResource(images[position])
         }
+        binding.carouselView.pageCount = images.size
     }
 
     private fun toastMessage(messageToast: Int) {
