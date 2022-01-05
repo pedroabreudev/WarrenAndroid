@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
 import br.com.warren.challange.MainViewModel
 import br.com.warren.challange.R
@@ -24,12 +26,18 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
         super.onViewCreated(view, savedInstanceState)
         initCarouselView()
         openAccount()
-        login()
+        goin()
     }
 
-    private fun login() {
-        binding.btnLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+    private fun goin() {
+        binding.btnGoIn.setOnClickListener {
+            userPreferences.authToken.asLiveData().observe(viewLifecycleOwner, Observer {
+                if (it == null) {
+                    findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+                } else {
+                    findNavController().navigate(R.id.action_homeFragment_to_objectivesListFragment)
+                }
+            })
         }
     }
 

@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import br.com.warren.challange.data.UserPreferences
 import br.com.warren.challange.data.repository.BaseRepository
 
 abstract class BaseFragment<VM : ViewModel, VB : ViewBinding, BR : BaseRepository> : Fragment() {
 
+    protected lateinit var userPreferences: UserPreferences
     protected lateinit var binding: VB
     protected lateinit var viewModel: VM
     protected val remote = br.com.warren.challange.data.network.Remote()
@@ -21,6 +23,7 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding, BR : BaseRepositor
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        userPreferences = UserPreferences(requireContext())
         binding = getFragmentBinding(inflater, container)
         val factory = ViewModelFactory(getFragmentRepository())
         viewModel = ViewModelProvider(this, factory).get(getViewModel())

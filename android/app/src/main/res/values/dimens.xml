@@ -12,4 +12,15 @@
     <dimen name="margin_button_forgotPassword">16dp</dimen>
     <dimen name="marginTop_button_forgotPassword">8dp</dimen>
     <dimen name="textSize_button_forgotPassword">12sp</dimen>
+    <dimen name="textSize_title_list_objectives">32sp</dimen>
+    <dimen name="editText_paddingStart_Search">16dp</dimen>
+    <dimen name="padding_title_list_objectives">16dp</dimen>
+    <dimen name="width_height_ivObjectives">56dp</dimen>
+    <dimen name="textView_marginStart">16dp</dimen>
+    <dimen name="textSize_textView_titleObjective">20sp</dimen>
+    <dimen name="width_height_imageObjectiveList">56dp</dimen>
+    <dimen name="imageView_margin">16dp</dimen>
+    <dimen name="cornerRadius_CardView">10dp</dimen>
+    <dimen name="cardMaxElevation">2dp</dimen>
+    <dimen name="margin_CardView">8dp</dimen>
 </resources>

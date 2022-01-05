@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import br.com.warren.challange.MainViewModel
 import br.com.warren.challange.R
@@ -14,6 +15,7 @@ import br.com.warren.challange.data.network.ServiceApi
 import br.com.warren.challange.data.repository.WarrenRepository
 import br.com.warren.challange.data.response.LoginResponse
 import br.com.warren.challange.ui.base.BaseFragment
+import kotlinx.coroutines.launch
 import retrofit2.Response
 
 
@@ -39,7 +41,7 @@ class LoginFragment : BaseFragment<MainViewModel, FragmentLoginBinding, WarrenRe
     }
 
     private fun clickLogin() {
-        binding.btSignIn.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             email = binding.etMail.text.toString().trim()
             password = binding.etPassword.text.toString().trim()
             viewModel.login(email, password)
@@ -52,6 +54,9 @@ class LoginFragment : BaseFragment<MainViewModel, FragmentLoginBinding, WarrenRe
             toastMessage(messageToast)
         }
         if (it.body() != null) {
+            lifecycleScope.launch {
+                userPreferences.saveAccessToken(it.body()!!.accessToken)
+            }
             findNavController().navigate(R.id.action_loginFragment_to_objectivesListFragment)
         }
     }
