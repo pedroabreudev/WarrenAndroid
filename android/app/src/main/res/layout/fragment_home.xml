@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".ui.home.HomeFragment">
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
@@ -22,20 +22,21 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_button"
         android:layout_marginRight="@dimen/margin_button"
+        android:backgroundTint="@color/warren_color"
         android:text="@string/open_account"
-        app:layout_constraintBottom_toTopOf="@id/btnLogin"
+        app:layout_constraintBottom_toTopOf="@id/btnGoIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/carouselView" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnGoIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_button"
         android:layout_marginRight="@dimen/margin_button"
         android:backgroundTint="@color/black"
-        android:text="@string/login"
+        android:text="@string/go_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

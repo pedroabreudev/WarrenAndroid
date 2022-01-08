@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.objective.ObjectivesListFragment">
+
+    <TextView
+        android:id="@+id/tvtitle_list_objectives"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_title_list_objectives"
+        android:text="@string/list_objectives"
+        android:textAlignment="textStart"
+        android:textColor="@color/warren_color"
+        android:textSize="@dimen/textSize_title_list_objectives"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_editText"
+        android:layout_marginStart="@dimen/editText_margin"
+        android:layout_marginTop="@dimen/editText_paddingStart"
+        android:layout_marginEnd="@dimen/editText_margin"
+        android:background="@drawable/backgroun_edittext_search"
+        android:hint="@string/search"
+        android:inputType="text"
+        android:paddingStart="@dimen/editText_paddingStart_Search"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_editText"
+        app:layout_constraintTop_toBottomOf="@id/tvtitle_list_objectives" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etSearch">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_objective" />
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Learning/Desafios/WarrenAndroid/android/app/src/main/res/layout/activity_main.xml" value="0.34923076923076923" />
+        <entry key="..\:/Learning/Desafios/WarrenAndroid/android/app/src/main/res/layout/fragment_home.xml" value="0.3546875" />
+        <entry key="..\:/Learning/Desafios/WarrenAndroid/android/app/src/main/res/layout/fragment_login.xml" value="0.34923076923076923" />
         <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.28055555555555556" />
+        <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/drawable/backgroun_edittext_search.xml" value="0.2846153846153846" />
         <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/drawable/background_button_forgot_password.xml" value="0.28055555555555556" />
         <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/drawable/background_edittext.xml" value="0.28055555555555556" />
         <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1574074074074074" />
@@ -12,6 +16,8 @@
         <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/layout/activity_main.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/layout/fragment_home.xml" value="0.23796296296296296" />
         <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/layout/fragment_login.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/layout/fragment_objectives_list.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Corsair/Learning/Desafios/WarrenAndroid/android/app/src/main/res/layout/item_objective.xml" value="0.24074074074074073" />
       </map>
     </option>
   </component>

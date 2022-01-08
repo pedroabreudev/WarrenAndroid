@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/warren_color"
-    tools:context=".LoginFragment">
+    tools:context=".ui.login.LoginFragment">
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etMail"
@@ -42,20 +42,20 @@
         app:layout_constraintTop_toBottomOf="@+id/etMail" />
 
     <Button
-        android:id="@+id/btSignIn"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_button_signin"
         android:layout_marginTop="@dimen/margin_button_signin"
         android:layout_marginRight="@dimen/margin_button_signin"
         android:backgroundTint="@color/black"
-        android:text="@string/sign_in"
+        android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
     <Button
-        android:id="@+id/tvForgotPassword"
+        android:id="@+id/btForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_button_forgotPassword"
@@ -65,6 +65,6 @@
         android:textColor="@color/white"
         android:textSize="@dimen/textSize_button_forgotPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btSignIn" />
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
