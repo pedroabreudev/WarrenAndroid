@@ -10,9 +10,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import br.com.warren.challange.data.UserPreferences
 import br.com.warren.challange.data.network.Remote
-import br.com.warren.challange.data.repository.BaseRepository
+import br.com.warren.challange.data.repository.WarrenRepository
 
-abstract class BaseFragment<VM : ViewModel, VB : ViewBinding, BR : BaseRepository> : Fragment() {
+abstract class BaseFragment<VM : ViewModel, VB : ViewBinding, WR : WarrenRepository> : Fragment() {
 
     protected lateinit var userPreferences: UserPreferences
     protected lateinit var binding: VB
@@ -35,5 +35,5 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding, BR : BaseRepositor
 
     abstract fun getFragmentBinding(inflater: LayoutInflater, container: ViewGroup?): VB
 
-    abstract fun getFragmentRepository(): BR
+    abstract fun getFragmentRepository(): WR
 }
