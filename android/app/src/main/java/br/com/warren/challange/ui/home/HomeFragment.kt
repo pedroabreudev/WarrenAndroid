@@ -5,14 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
 import br.com.warren.challange.MainViewModel
 import br.com.warren.challange.R
-import br.com.warren.challange.databinding.FragmentHomeBinding
 import br.com.warren.challange.data.network.ServiceApi
 import br.com.warren.challange.data.repository.WarrenRepository
+import br.com.warren.challange.databinding.FragmentHomeBinding
 import br.com.warren.challange.ui.base.BaseFragment
 
 
@@ -26,12 +25,12 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
         super.onViewCreated(view, savedInstanceState)
         initCarouselView()
         openAccount()
-        goin()
+        login()
     }
 
-    private fun goin() {
+    private fun login() {
         binding.btnGoIn.setOnClickListener {
-            userPreferences.authToken.asLiveData().observe(viewLifecycleOwner, Observer {
+            userPreferences.accessToken.asLiveData().observe(viewLifecycleOwner, {
                 if (it == null) {
                     findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
                 } else {

@@ -15,14 +15,14 @@ class UserPreferences(context: Context) {
 
     private val appContext = context.applicationContext
 
-    val authToken: Flow<String?>
+    val accessToken: Flow<String?>
         get() = appContext.dataStore.data.map { preferences ->
             preferences[ACCESS_TOKEN]
         }
 
-    suspend fun saveAccessToken(authToken: String) {
+    suspend fun saveAccessToken(accessToken: String) {
         appContext.dataStore.edit { preferences ->
-            preferences[ACCESS_TOKEN] = authToken
+            preferences[ACCESS_TOKEN] = accessToken
         }
     }
 
