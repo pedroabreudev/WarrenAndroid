@@ -8,4 +8,5 @@ open class WarrenRepository(private val api: ServiceApi) {
     suspend fun login(email: String, password: String) =
         api.login(LoginBody(email, password))
 
+    suspend fun listObjectives() = api.listObjectives()
 }
