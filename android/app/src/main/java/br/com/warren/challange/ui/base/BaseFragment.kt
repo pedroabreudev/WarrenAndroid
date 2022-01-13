@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import br.com.warren.challange.data.UserPreferences
 import br.com.warren.challange.data.network.Remote
 import br.com.warren.challange.data.repository.WarrenRepository
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 abstract class BaseFragment<VM : ViewModel, VB : ViewBinding, WR : WarrenRepository> : Fragment() {
 
@@ -28,6 +31,7 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding, WR : WarrenReposit
         binding = getFragmentBinding(inflater, container)
         val factory = ViewModelFactory(getFragmentRepository())
         viewModel = ViewModelProvider(this, factory).get(getViewModel())
+        lifecycleScope.launch { userPreferences.accessToken.first() }
         return binding.root
     }
 
