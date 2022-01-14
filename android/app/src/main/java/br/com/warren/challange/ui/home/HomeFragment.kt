@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
 import br.com.warren.challange.MainViewModel
 import br.com.warren.challange.R
@@ -23,6 +22,7 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initCarouselView()
         openAccount()
         login()
@@ -30,13 +30,11 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
 
     private fun login() {
         binding.btnGoIn.setOnClickListener {
-            userPreferences.accessToken.asLiveData().observe(viewLifecycleOwner, {
-                if (it == null) {
-                    findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
-                } else {
-                    findNavController().navigate(R.id.action_homeFragment_to_objectivesListFragment)
-                }
-            })
+            if (mSecurityPreferences.getToken("accessToken") == "") {
+                findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+            } else {
+                findNavController().navigate(R.id.action_homeFragment_to_objectivesListFragment)
+            }
         }
     }
 
@@ -62,7 +60,7 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ) = FragmentHomeBinding.inflate(inflater, container, false)
 
     override fun getFragmentRepository() = WarrenRepository(remote.buildApi(ServiceApi::class.java))

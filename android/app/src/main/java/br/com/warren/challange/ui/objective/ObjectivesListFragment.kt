@@ -12,8 +12,6 @@ import br.com.warren.challange.data.response.ListObjectivesResponse
 import br.com.warren.challange.databinding.FragmentObjectivesListBinding
 import br.com.warren.challange.ui.adapter.ListObjectivesAdapter
 import br.com.warren.challange.ui.base.BaseFragment
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
 
 class ObjectivesListFragment :
     BaseFragment<MainViewModel, FragmentObjectivesListBinding, WarrenRepository>() {
@@ -26,6 +24,7 @@ class ObjectivesListFragment :
         viewModel.listObjectives()
         viewModel.objectivesResponse.observe(viewLifecycleOwner, {
             setupRecyclerView(it.body() ?: ListObjectivesResponse(portfolios = mutableListOf()))
+            binding.progressBarListObjectives.visibility = View.INVISIBLE
         })
     }
 
@@ -45,7 +44,7 @@ class ObjectivesListFragment :
     ) = FragmentObjectivesListBinding.inflate(inflater, container, false)
 
     override fun getFragmentRepository(): WarrenRepository {
-        val accessToken = runBlocking { userPreferences.accessToken.first() }
+        val accessToken = mSecurityPreferences.getToken("accessToken")
         return WarrenRepository(remote.buildApi(ServiceApi::class.java, accessToken))
     }
 }
