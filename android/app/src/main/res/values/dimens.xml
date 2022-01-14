@@ -17,8 +17,9 @@
     <dimen name="padding_title_list_objectives">16dp</dimen>
     <dimen name="width_height_ivObjectives">56dp</dimen>
     <dimen name="textView_marginStart">16dp</dimen>
-    <dimen name="textSize_textView_titleObjective">20sp</dimen>
-    <dimen name="width_height_imageObjectiveList">56dp</dimen>
+    <dimen name="textSize_textView_titleObjective">22sp</dimen>
+    <dimen name="width_imageObjectiveList">100dp</dimen>
+    <dimen name="height_imageObjectiveList">64dp</dimen>
     <dimen name="imageView_margin">16dp</dimen>
     <dimen name="cornerRadius_CardView">10dp</dimen>
     <dimen name="cardMaxElevation">2dp</dimen>

@@ -8,7 +8,7 @@
     tools:context=".ui.objective.ObjectivesListFragment">
 
     <TextView
-        android:id="@+id/tvtitle_list_objectives"
+        android:id="@+id/tvTitle_ListObjectives"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_title_list_objectives"
@@ -19,21 +19,16 @@
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etSearch"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_editText"
-        android:layout_marginStart="@dimen/editText_margin"
-        android:layout_marginTop="@dimen/editText_paddingStart"
-        android:layout_marginEnd="@dimen/editText_margin"
-        android:background="@drawable/backgroun_edittext_search"
-        android:hint="@string/search"
-        android:inputType="text"
-        android:paddingStart="@dimen/editText_paddingStart_Search"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="@dimen/textSize_editText"
-        app:layout_constraintTop_toBottomOf="@id/tvtitle_list_objectives" />
+    <ProgressBar
+        android:id="@+id/progressBarListObjectives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/warren_color"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle_ListObjectives" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -41,9 +36,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etSearch">
+        app:layout_constraintTop_toBottomOf="@id/tvTitle_ListObjectives">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListObjectives"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/item_objective" />

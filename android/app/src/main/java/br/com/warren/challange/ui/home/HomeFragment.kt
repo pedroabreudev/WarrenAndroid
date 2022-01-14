@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
 import br.com.warren.challange.MainViewModel
 import br.com.warren.challange.R
-import br.com.warren.challange.databinding.FragmentHomeBinding
 import br.com.warren.challange.data.network.ServiceApi
 import br.com.warren.challange.data.repository.WarrenRepository
+import br.com.warren.challange.databinding.FragmentHomeBinding
 import br.com.warren.challange.ui.base.BaseFragment
 
 
@@ -24,20 +22,19 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initCarouselView()
         openAccount()
-        goin()
+        login()
     }
 
-    private fun goin() {
+    private fun login() {
         binding.btnGoIn.setOnClickListener {
-            userPreferences.authToken.asLiveData().observe(viewLifecycleOwner, Observer {
-                if (it == null) {
-                    findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
-                } else {
-                    findNavController().navigate(R.id.action_homeFragment_to_objectivesListFragment)
-                }
-            })
+            if (mSecurityPreferences.getToken("accessToken") == "") {
+                findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+            } else {
+                findNavController().navigate(R.id.action_homeFragment_to_objectivesListFragment)
+            }
         }
     }
 
@@ -63,7 +60,7 @@ class HomeFragment : BaseFragment<MainViewModel, FragmentHomeBinding, WarrenRepo
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ) = FragmentHomeBinding.inflate(inflater, container, false)
 
     override fun getFragmentRepository() = WarrenRepository(remote.buildApi(ServiceApi::class.java))

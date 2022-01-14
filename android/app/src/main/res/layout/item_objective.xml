@@ -16,12 +16,13 @@
 
         <ImageView
             android:id="@+id/ivObjective"
-            android:layout_width="@dimen/width_height_imageObjectiveList"
-            android:layout_height="@dimen/width_height_imageObjectiveList"
+            android:layout_width="@dimen/width_imageObjectiveList"
+            android:layout_height="@dimen/height_imageObjectiveList"
             android:layout_margin="@dimen/imageView_margin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/contentDescriptionImageObjective"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/textView_marginStart"
-            tools:text="Objetivo 1"
+            tools:text="Objective 1"
             android:textColor="@color/black"
             android:textSize="@dimen/textSize_textView_titleObjective"
             app:layout_constraintBottom_toBottomOf="parent"
